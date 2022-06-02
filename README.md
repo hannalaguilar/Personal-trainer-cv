@@ -1,10 +1,6 @@
-
 # Personal trainer using computer vision
-<img src="images/curl.jpg" width=70%>
 
-<img src="images/curl.jpg" width=70% align="center"> 
-
-![curlimg](images/curl.jpg)
+![img](images/curl.jpg)
 
 Module to count the correct repetitions of bicep curls using mediapipe and opencv.
 
