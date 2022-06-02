@@ -24,4 +24,4 @@ def n_resize(img: np.ndarray,
     height, width, _ = img.shape
     resize = 1 / n
     new_size = int(width * resize), int(height * resize)
-    return cv2.resize(img, new_size)
+    return cv2.resize(img, new_size).astype(np.uint8)

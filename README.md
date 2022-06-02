@@ -1,8 +1,13 @@
-# Personal trainer with computer vision
 
+# Personal trainer using computer vision
+<img src="images/curl.jpg" alt="drawing" width="500"/>
 
+Module to count the correct repetitions of bicep curls using mediapipe and opencv.
 
-![curlbicep](images/curl.gif)
+An example:
+
+![curlgif](images/curl.gif)
+
 
 ## Setup environment
 ```
@@ -16,31 +21,30 @@ pip install pytest, coverage
 ```
 
 ## Data
-Videos and images for this project can be downloaded [here](https://pexels.com)
+The videos and images for this project can be downloaded [here](https://pexels.com)
 
-Also for video, webcam can be used.
 
 ## Personal trainer
-For now, there is four scripts:
+For now, there are four scripts:
 
- - curl_bicep_video.py:
- - pose_module.py:
- - quickly_pose_image.py:
- - tools.py:
+ - curl_bicep_video.py: module of dumbbell biceps curl to count the correct repetitions.
+ - pose_module.py: pose estimation for the detection of different types of exercises.
+ - quickly_pose_image.py: run and get quickly the landmarks in an image.
+ - tools.py: useful tools for the computer vision projects.
 
-Ubicarse en la repository root and:
 
 ## Tests
-Ubicarse en la repository root and:
+Go to the repository root and run this:
 
 ```
 pytest -xs tests/test_personal_trainer.py
 ```
 
-For running coverage:
+For running the coverage:
 
 ```
 coverage run --rcfile=coverage.cfg -m pytest tests/
 coverage report
 ```
+The project coverage is 0.98.
 

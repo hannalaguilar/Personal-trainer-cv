@@ -26,7 +26,6 @@ def main(video_path: Union[str, Path],
     assert arm_evaluated.lower() in ['right', 'left'], \
         'Arm evaluated only can be right or left'
 
-    angle = None
     detector = pm.PoseEstimation()
     count = 0
     direction = 0

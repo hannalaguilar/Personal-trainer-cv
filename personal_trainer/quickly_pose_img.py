@@ -10,6 +10,7 @@ import numpy as np
 import cv2
 import mediapipe as mp
 
+from personal_trainer.tools import n_resize
 from definitions import DATA_PATH
 
 
@@ -26,6 +27,7 @@ def main(img_path: Union[str, Path]) -> None:
     with mp_pose.Pose(static_image_mode=True) as pose:
         # Read test_image
         img = cv2.imread(str(img_path))
+        img = n_resize(img)
 
         # Transform BGR into RGB
         img_rgb = img[:, :, ::-1]
@@ -40,8 +42,10 @@ def main(img_path: Union[str, Path]) -> None:
                                       results.pose_landmarks,
                                       mp_pose.POSE_CONNECTIONS)
         cv2.imshow('Image', img_rgb[:, :, ::-1])  # convert to RGB to use correctly in opencv
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
-if __name__ == '__main__':   # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     IMG_PATH = DATA_PATH / 'image.jpg'
     main(IMG_PATH)

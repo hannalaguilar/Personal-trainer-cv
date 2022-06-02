@@ -69,10 +69,6 @@ def test_n_resize(test_image):
     assert new_size == tools.n_resize(test_image, n).shape
 
 
-def test_quickly_pose_img():
-    qp.main(str(TEST_PATH / 'data/test_img.jpg'))
-
-
 def test_curl_bicep_video_invalid_cap():
     with pytest.raises(Exception, match='Warning: unable to open video source'):
         mv.main('fake_path.mp4', 'right')
@@ -86,3 +82,7 @@ def test_curl_bicep_video_invalid_arm():
 def test_curl_bicep_video():
     mv.main(str(TEST_PATH / 'data/test_video.mp4'),
             'left')
+
+
+def test_quickly_pose_img():
+    qp.main(str(TEST_PATH / 'data/test_img.jpg'))
